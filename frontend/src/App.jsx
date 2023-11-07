@@ -1,7 +1,3 @@
-
-
-function App() {
+export default function App() {
   return <>hello</>;
 }
-
-export default App;
