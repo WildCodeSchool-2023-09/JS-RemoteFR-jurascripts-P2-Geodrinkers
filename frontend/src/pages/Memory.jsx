@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SingleCard from "../components/SingleCard";
 
 const cardImages = [
   {
@@ -33,7 +34,9 @@ function Memory() {
     setCards(shuffledCards);
     setTurns(0);
   };
+
   console.warn(cards, turns);
+
   return (
     <section className="Memory">
       <button type="button" onClick={shuffleCards}>
@@ -41,16 +44,7 @@ function Memory() {
       </button>
       <div className="card-grid">
         {cards.map((card) => (
-          <div className="card" key={card.id}>
-            <div>
-              <img className="front" src={card.src} alt="card front" />
-              <img
-                className="back"
-                src="./src/assets/img/logo-geo.png"
-                alt="card back"
-              />
-            </div>
-          </div>
+          <SingleCard key={card.id} card={card} />
         ))}
       </div>
     </section>
