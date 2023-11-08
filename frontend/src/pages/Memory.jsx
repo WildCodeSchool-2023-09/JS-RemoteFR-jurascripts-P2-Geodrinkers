@@ -4,18 +4,23 @@ import SingleCard from "../components/SingleCard";
 const cardImages = [
   {
     src: "./src/assets/img/cocktailCard.png",
+    matched: false,
   },
   {
     src: "./src/assets/img/cocktailCard.png",
+    matched: false,
   },
   {
     src: "./src/assets/img/cocktailCard.png",
+    matched: false,
   },
   {
     src: "./src/assets/img/cocktailCard.png",
+    matched: false,
   },
   {
     src: "./src/assets/img/cocktailCard.png",
+    matched: false,
   },
 ];
 
@@ -55,6 +60,14 @@ function Memory() {
   useEffect(() => {
     if (choiceOne && choiceTwo) {
       if (choiceOne.src === choiceTwo.src) {
+        setCards((preveCards) => {
+          return preveCards.map((card) => {
+            if (card.src === choiceOne.src) {
+              return { ...card, matched: true };
+            }
+            return card;
+          });
+        });
         resetTurn();
       } else {
         resetTurn();
