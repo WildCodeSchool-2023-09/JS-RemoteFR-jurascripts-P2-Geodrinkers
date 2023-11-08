@@ -22,6 +22,10 @@ const cardImages = [
 function Memory() {
   const [cards, setCards] = useState([]);
   const [turns, setTurns] = useState(0);
+  const [choiceOne, setChoiceOne] = useState(null);
+  const [choiceTwo, setChoiceTwo] = useState(null);
+
+  console.warn(turns, choiceTwo);
 
   const shuffleCards = () => {
     const shuffledCards = [...cardImages, ...cardImages]
@@ -35,7 +39,13 @@ function Memory() {
     setTurns(0);
   };
 
-  console.warn(cards, turns);
+  const handleChoice = (card) => {
+    if (choiceOne) {
+      setChoiceTwo(card);
+    } else {
+      setChoiceOne(card);
+    }
+  };
 
   return (
     <section className="Memory">
@@ -44,7 +54,7 @@ function Memory() {
       </button>
       <div className="card-grid">
         {cards.map((card) => (
-          <SingleCard key={card.id} card={card} />
+          <SingleCard key={card.id} card={card} handleChoice={handleChoice} />
         ))}
       </div>
     </section>
