@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SingleCard from "../components/SingleCard";
 
 const cardImages = [
@@ -25,7 +25,7 @@ function Memory() {
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
 
-  console.warn(turns, choiceTwo);
+  console.warn(turns);
 
   const shuffleCards = () => {
     const shuffledCards = [...cardImages, ...cardImages]
@@ -41,11 +41,26 @@ function Memory() {
 
   const handleChoice = (card) => {
     if (choiceOne) {
-      setChoiceTwo(card);
-    } else {
-      setChoiceOne(card);
+      return setChoiceTwo(card);
     }
+    return setChoiceOne(card);
   };
+
+  const resetTurn = () => {
+    setChoiceOne(null);
+    setChoiceTwo(null);
+    setTurns((prevTurns) => prevTurns + 1);
+  };
+
+  useEffect(() => {
+    if (choiceOne && choiceTwo) {
+      if (choiceOne.src === choiceTwo.src) {
+        resetTurn();
+      } else {
+        resetTurn();
+      }
+    }
+  }, [choiceOne, choiceTwo]);
 
   return (
     <section className="Memory">
