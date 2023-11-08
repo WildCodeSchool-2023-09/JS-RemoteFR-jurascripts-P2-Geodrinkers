@@ -3,23 +3,27 @@ import SingleCard from "../components/SingleCard";
 
 const cardImages = [
   {
-    src: "./src/assets/img/cocktailCard.png",
+    src: "./src/assets/img/green.jpg",
     matched: false,
   },
   {
-    src: "./src/assets/img/cocktailCard.png",
+    src: "./src/assets/img/orange.jpg",
     matched: false,
   },
   {
-    src: "./src/assets/img/cocktailCard.png",
+    src: "./src/assets/img/spritz.jpg",
     matched: false,
   },
   {
-    src: "./src/assets/img/cocktailCard.png",
+    src: "./src/assets/img/white.jpg",
     matched: false,
   },
   {
-    src: "./src/assets/img/cocktailCard.png",
+    src: "./src/assets/img/yellow.jpg",
+    matched: false,
+  },
+  {
+    src: "./src/assets/img/blue.jpg",
     matched: false,
   },
 ];
@@ -31,8 +35,6 @@ function Memory() {
   const [choiceTwo, setChoiceTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
 
-  console.warn(turns);
-
   const shuffleCards = () => {
     const shuffledCards = [...cardImages, ...cardImages]
       .sort(() => Math.random() - 0.5)
@@ -41,6 +43,8 @@ function Memory() {
         id: Math.random(),
       }));
 
+    setChoiceOne(null);
+    setChoiceTwo(null);
     setCards(shuffledCards);
     setTurns(0);
   };
@@ -78,21 +82,30 @@ function Memory() {
     }
   }, [choiceOne, choiceTwo]);
 
+  useEffect(() => {
+    shuffleCards();
+  }, []);
+
   return (
     <section className="Memory">
-      <button type="button" onClick={shuffleCards}>
-        New Game
-      </button>
-      <div className="card-grid">
-        {cards.map((card) => (
-          <SingleCard
-            key={card.id}
-            card={card}
-            handleChoice={handleChoice}
-            flipped={card === choiceOne || card === choiceTwo || card.matched}
-            disabled={disabled}
-          />
-        ))}
+      <div className="Memory-ctn">
+        <button type="button" onClick={shuffleCards}>
+          New Game
+        </button>
+        <div className="card-grid">
+          {cards.map((card) => (
+            <SingleCard
+              key={card.id}
+              card={card}
+              handleChoice={handleChoice}
+              flipped={card === choiceOne || card === choiceTwo || card.matched}
+              disabled={disabled}
+            />
+          ))}
+        </div>
+        <div className="turn-ctn">
+          <p>Turns: {turns}</p>
+        </div>
       </div>
     </section>
   );
