@@ -1,0 +1,72 @@
+$primary-color: linear-gradient(45deg, #fce419, #f39914);
+
+.start-ctn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  object-fit: contain;
+  video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
+  }
+}
+
+.btn-ctn {
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: 2px solid #fce419;
+    padding: 1rem 1.5rem;
+    border-radius: 4px;
+    background-image: $primary-color;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 5rem;
+
+    &:hover {
+      color: #fff;
+      -webkit-text-fill-color: #fff;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      background: $primary-color;
+    }
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .start-ctn {
+    img {
+      width: 90%;
+    }
+  }
+
+  .btn-ctn {
+    padding: 0 1.5rem;
+    button {
+      font-size: 0.7rem;
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .btn-ctn {
+    padding: 0 1rem;
+    button {
+      font-size: 0.5rem;
+    }
+  }
+}
