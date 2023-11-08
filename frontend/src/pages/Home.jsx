@@ -1,3 +1,7 @@
 export default function Home() {
-  return <h1> Toto </h1>;
+  return (
+    <div>
+      <h1>Page Home</h1>
+    </div>
+  );
 }
