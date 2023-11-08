@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from "prop-types";
 import "./styles/SingleCard.scss";
 
 export default function SingleCard({ card, handleChoice, flipped, disabled }) {
@@ -23,3 +23,11 @@ export default function SingleCard({ card, handleChoice, flipped, disabled }) {
     </div>
   );
 }
+SingleCard.propTypes = {
+  card: PropTypes.shape({
+    src: PropTypes.string.isRequired,
+  }).isRequired,
+  handleChoice: PropTypes.func.isRequired,
+  flipped: PropTypes.bool.isRequired,
+  disabled: PropTypes.bool.isRequired,
+};
