@@ -1,3 +1,10 @@
+import Memory from "./pages/Memory";
+import "./components/styles/Memory.scss";
+
 export default function App() {
-  return <>hello</>;
+  return (
+    <div>
+      <Memory />
+    </div>
+  );
 }
