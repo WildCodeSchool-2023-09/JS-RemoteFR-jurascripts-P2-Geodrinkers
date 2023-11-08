@@ -5,8 +5,8 @@ import SpaceMap from "./pages/SpaceMap";
 export default function App() {
   return (
     <>
-      <SpaceMap />
       <Home />
+      <SpaceMap />
     </>
   );
 }

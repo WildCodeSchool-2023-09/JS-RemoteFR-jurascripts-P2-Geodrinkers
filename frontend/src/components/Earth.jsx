@@ -19,8 +19,8 @@ function Earth() {
 export default function EarthCanvas() {
   return (
     <div className="space-ctn">
-      <Canvas camera={{ fov: 60, near: 0.1, far: 500, position: [0, 20, 65] }}>
-        <OrbitControls />
+      <Canvas camera={{ fov: 35, near: 0.1, far: 500, position: [0, 20, 65] }}>
+        <OrbitControls autoRotate autoRotateSpeed={0.2} />
         <Stars />
         <Earth />
         <ambientLight intensity={1.5} />
