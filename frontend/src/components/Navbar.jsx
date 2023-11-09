@@ -27,9 +27,21 @@ export default function Navbar() {
           />
         </div>
         <ul className={click ? "nav-menu active" : "nav-menu"}>
-          <li className="nav-item">Acceuil</li>
-          <li className="nav-item">Carte</li>
-          <li className="nav-item">Memory</li>
+          <li className="nav-item">
+            <p className="nav-link" onClick={handleClick} aria-hidden="true">
+              Acceuil
+            </p>
+          </li>
+          <li className="nav-item">
+            <p className="nav-link" onClick={handleClick} aria-hidden="true">
+              Carte
+            </p>
+          </li>
+          <li className="nav-item">
+            <p className="nav-link" onClick={handleClick} aria-hidden="true">
+              Memory
+            </p>
+          </li>
         </ul>
       </div>
     </nav>
