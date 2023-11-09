@@ -8,11 +8,12 @@ $primary-color: linear-gradient(45deg, #fce419, #f39914);
   width: 100%;
   height: 100vh;
   object-fit: contain;
+  position: relative;
   video {
     object-fit: cover;
     width: 100%;
     height: 100%;
-    position: fixed;
+    position: absolute;
     z-index: -1;
   }
 }
@@ -29,6 +30,8 @@ $primary-color: linear-gradient(45deg, #fce419, #f39914);
     background-image: $primary-color;
     background-clip: text;
     color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-weight: bold;
     cursor: pointer;
     font-size: 1rem;
