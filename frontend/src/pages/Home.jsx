@@ -1,7 +1,11 @@
+import CardHomeList from "../datas/CardDataHome";
+import CardList from "../components/CardList";
+import "../components/styles/Home.scss";
+
 export default function Home() {
   return (
-    <div>
-      <h1>Page Home</h1>
+    <div className="CardContainer">
+      <CardList arr={CardHomeList} />
     </div>
   );
 }
