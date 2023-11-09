@@ -1,3 +1,11 @@
+import CardHomeList from "../datas/CardDataHome";
+import CardList from "../components/CardList";
+import "../components/styles/Home.scss";
+
 export default function Home() {
-  return <h1> Toto </h1>;
+  return (
+    <div className="CardContainer">
+      <CardList arr={CardHomeList} />
+    </div>
+  );
 }

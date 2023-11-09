@@ -1,0 +1,36 @@
+.card-memory {
+  position: relative;
+  width: 186px;
+  height: 200px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #fce419;
+  border-radius: 6px;
+  background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+  cursor: pointer;
+}
+
+.card-memory-img {
+  display: block;
+  max-width: 90%;
+  max-height: 90%;
+  margin: auto;
+}
+.card-memory .front {
+  transform: rotateY(90deg);
+  transition: all ease-in 0.2s;
+  position: absolute;
+}
+.flipped .front {
+  transform: rotateY(0deg);
+}
+.card-memory .back {
+  transition: all ease-in 0.2s;
+  transition-delay: 0.2s;
+}
+.flipped .back {
+  transform: rotateY(90deg);
+  transition-delay: 0s;
+}

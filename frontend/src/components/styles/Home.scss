@@ -1,0 +1,31 @@
+@import "variables";
+
+.CardContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 1.5em;
+  text-align: center;
+  background-image: url("./src/assets/img/stars.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.card-ctn {
+  border: 2px solid #fbe518;
+  border-radius: 35px;
+  box-shadow: 0 0 30px rgba(51, 46, 39, 0.8);
+  width: 260px;
+  height: 446px;
+  .title-ctn {
+    background: $primary-color;
+    background-clip: text;
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
