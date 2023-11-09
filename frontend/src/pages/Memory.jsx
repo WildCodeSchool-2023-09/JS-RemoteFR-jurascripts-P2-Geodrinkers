@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import SingleCard from "../components/SingleCard";
+import "../components/styles/Memory.scss";
 
 const cardImages = [
   {
