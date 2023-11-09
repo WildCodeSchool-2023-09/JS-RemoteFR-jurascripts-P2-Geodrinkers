@@ -55,7 +55,7 @@ export default function IconJL({ position }) {
       {cardCocktail && (
         <Html>
           <div style={{ pointerEvents: "auto", cursor: "pointer" }}>
-            <div className="card">
+            <div className="card-map">
               <div className="svg-ctn">
                 <svg
                   onClick={hideCard}
