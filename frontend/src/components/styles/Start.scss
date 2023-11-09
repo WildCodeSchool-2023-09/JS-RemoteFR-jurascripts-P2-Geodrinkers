@@ -28,6 +28,8 @@ $primary-color: linear-gradient(45deg, #fce419, #f39914);
     border-radius: 4px;
     background-image: $primary-color;
     background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     color: transparent;
     font-weight: bold;
     cursor: pointer;
