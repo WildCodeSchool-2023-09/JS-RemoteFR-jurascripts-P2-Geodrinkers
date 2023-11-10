@@ -5,8 +5,11 @@ import "../components/styles/Home.scss";
 
 export default function Home() {
   return (
+    <>
+      <Navbar />
     <div className="CardContainer">
       <CardList CardDataHome={CardDataHome} />
     </div>
+    </>
   );
 }
