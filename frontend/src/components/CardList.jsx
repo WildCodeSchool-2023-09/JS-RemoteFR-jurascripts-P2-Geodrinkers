@@ -8,10 +8,10 @@ export default function CardList({ CardDataHome }) {
   return (
     <>
       <Link to="/map" className="card-map-link">
-        <Card title={firstCard.name} img={firstCard.img} />
+        <Card name={firstCard.name} img={firstCard.img} />
       </Link>
       <Link to="/memory" className="card-map-link">
-        <Card title={secondCard.name} img={secondCard.img} />
+        <Card name={secondCard.name} img={secondCard.img} />
       </Link>
     </>
   );
