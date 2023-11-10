@@ -27,16 +27,15 @@
     border: 2px solid #fce419;
     padding: 1rem 1.5rem;
     border-radius: 4px;
-    background-image: $primary-color;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-
     font-weight: bold;
     cursor: pointer;
     font-size: 1rem;
     margin-top: 5rem;
+    background: $primary-color;
+    background-clip: text;
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
     &:hover {
       color: #fff;
@@ -44,19 +43,6 @@
       text-decoration: underline;
       text-decoration-thickness: 2px;
       background: $primary-color;
-    }
-    .btn-link {
-      background: $primary-color;
-      background-clip: text;
-      color: transparent;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .btn-link:hover {
-      color: #fff;
-      -webkit-text-fill-color: #fff;
-      text-decoration: underline;
-      text-decoration-thickness: 2px;
     }
   }
   a {

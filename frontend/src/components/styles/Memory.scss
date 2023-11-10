@@ -9,7 +9,7 @@
   background-position: center;
   background-size: cover;
   width: 100%;
-  min-height: 100vh;
+  min-height: calc(100vh - 80px);
 }
 .Memory-ctn {
   display: flex;
@@ -29,7 +29,7 @@
     font-weight: bold;
     cursor: pointer;
     font-size: 2rem;
-    margin-top: 5rem;
+    margin-top: 3rem;
     margin-bottom: 1rem;
   }
   button:hover {
@@ -41,7 +41,7 @@
     margin-top: 1rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 10px;
+    grid-gap: 20px;
   }
   .turn-ctn {
     border: 2px solid #fce419;
