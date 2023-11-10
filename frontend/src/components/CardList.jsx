@@ -1,17 +1,24 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import Card from "./Card";
 
-export default function CardList({ arr }) {
+export default function CardList({ CardDataHome }) {
+  const firstCard = CardDataHome[0];
+  const secondCard = CardDataHome[1];
   return (
     <>
-      {arr.map((item) => (
-        <Card key={item.id} name={item.name} img={item.img} />
-      ))}
+      <Link to="/map" className="card-map-link">
+        <Card title={firstCard.name} img={firstCard.img} />
+      </Link>
+      <Link to="/memory" className="card-map-link">
+        <Card title={secondCard.name} img={secondCard.img} />
+      </Link>
     </>
   );
 }
+
 CardList.propTypes = {
-  arr: PropTypes.arrayOf(
+  CardDataHome: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
