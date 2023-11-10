@@ -1,4 +1,4 @@
-$primary-color: linear-gradient(45deg, #fce419, #f39914);
+@import "variables";
 
 .Memory {
   font-family: Arial, Helvetica, sans-serif;
@@ -8,6 +8,7 @@ $primary-color: linear-gradient(45deg, #fce419, #f39914);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  width: 100%;
   min-height: 100vh;
 }
 .Memory-ctn {

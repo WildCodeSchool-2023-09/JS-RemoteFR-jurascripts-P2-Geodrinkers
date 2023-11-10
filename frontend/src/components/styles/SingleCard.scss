@@ -1,4 +1,6 @@
-.card {
+@import "variables";
+
+card-memory {
   position: relative;
   width: 186px;
   height: 200px;
@@ -12,13 +14,13 @@
   cursor: pointer;
 }
 
-.card-img {
+.card-memory-img {
   display: block;
   max-width: 90%;
   max-height: 90%;
   margin: auto;
 }
-.card .front {
+.card-memory .front {
   transform: rotateY(90deg);
   transition: all ease-in 0.2s;
   position: absolute;
@@ -26,7 +28,7 @@
 .flipped .front {
   transform: rotateY(0deg);
 }
-.card .back {
+.card-memory .back {
   transition: all ease-in 0.2s;
   transition-delay: 0.2s;
 }

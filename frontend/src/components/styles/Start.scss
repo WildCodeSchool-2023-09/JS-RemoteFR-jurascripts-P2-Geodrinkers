@@ -1,4 +1,4 @@
-$primary-color: linear-gradient(45deg, #fce419, #f39914);
+@import "variables";
 
 .start-ctn {
   display: flex;
@@ -8,11 +8,12 @@ $primary-color: linear-gradient(45deg, #fce419, #f39914);
   width: 100%;
   height: 100vh;
   object-fit: contain;
+  position: relative;
   video {
     object-fit: cover;
     width: 100%;
     height: 100%;
-    position: fixed;
+    position: absolute;
     z-index: -1;
   }
 }
@@ -28,7 +29,10 @@ $primary-color: linear-gradient(45deg, #fce419, #f39914);
     border-radius: 4px;
     background-image: $primary-color;
     background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     color: transparent;
+
     font-weight: bold;
     cursor: pointer;
     font-size: 1rem;
@@ -40,6 +44,19 @@ $primary-color: linear-gradient(45deg, #fce419, #f39914);
       text-decoration: underline;
       text-decoration-thickness: 2px;
       background: $primary-color;
+    }
+    .btn-link {
+      background: $primary-color;
+      background-clip: text;
+      color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .btn-link:hover {
+      color: #fff;
+      -webkit-text-fill-color: #fff;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
     }
   }
   a {
