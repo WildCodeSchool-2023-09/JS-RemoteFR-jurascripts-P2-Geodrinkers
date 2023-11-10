@@ -1,0 +1,59 @@
+@import "variables";
+
+.Memory {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url("../../assets/img/galaxy.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  min-height: calc(100vh - 80px);
+}
+.Memory-ctn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 860px;
+  margin-top: 2rem;
+  margin: auto;
+
+  button {
+    padding: 6px 12px;
+    background: none;
+    border: 2px solid #fce419;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
+  button:hover {
+    background: $primary-color;
+    color: #fff;
+  }
+
+  .card-grid {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+  }
+  .turn-ctn {
+    border: 2px solid #fce419;
+    border-radius: 10px;
+    margin-top: 1rem;
+  }
+  p {
+    margin: 0;
+    font-weight: bold;
+    padding: 0.2rem 0.3rem;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #fff;
+  }
+}

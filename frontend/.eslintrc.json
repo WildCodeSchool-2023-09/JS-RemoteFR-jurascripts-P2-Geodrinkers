@@ -6,8 +6,7 @@
   "extends": [
     "plugin:react/recommended",
     "airbnb",
-    "plugin:prettier/recommended",
-    "plugin:@react-three/recommended"
+    "plugin:prettier/recommended"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -34,6 +33,10 @@
       {
         "assert": "either"
       }
+    ],
+    "react/no-unknown-property": [
+      1,
+      { "ignore": ["args", "map", "intensity", "dispose", "position"] }
     ]
   }
 }
