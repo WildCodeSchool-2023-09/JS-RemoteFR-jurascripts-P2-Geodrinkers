@@ -125,7 +125,7 @@ function PlanetModel() {
 function EarthCanvas() {
   return (
     <div className="space-ctn">
-      <Canvas camera={{ fov: 60, near: 0.1, far: 500, position: [0, 20, 65] }}>
+      <Canvas camera={{ fov: 75, near: 0.1, far: 500, position: [0, 20, 65] }}>
         <OrbitControls autoRotate autoRotateSpeed={0.2} />
         <Stars />
         <PlanetModel />
