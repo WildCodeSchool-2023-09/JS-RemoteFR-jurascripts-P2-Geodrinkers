@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./styles/Navbar.scss";
 
 export default function Navbar() {
@@ -11,11 +12,9 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-ctn">
-        <img
-          src="./src/assets/img/logo-geo.png"
-          alt="logo"
-          className="navbar-logo"
-        />
+        <Link to="/" className="navbar-logo">
+          <img src="./src/assets/img/logo-geo.png" alt="logo" />
+        </Link>
         <div className="menu-icon" onClick={handleClick} aria-hidden="true">
           <img
             src={
@@ -28,19 +27,37 @@ export default function Navbar() {
         </div>
         <ul className={click ? "nav-menu active" : "nav-menu"}>
           <li className="nav-item">
-            <p className="nav-link" onClick={handleClick} aria-hidden="true">
-              Acceuil
-            </p>
+            <Link
+              to="/home"
+              className="nav-link"
+              onClick={() => {
+                setClick(false);
+              }}
+            >
+              Accueil
+            </Link>
           </li>
           <li className="nav-item">
-            <p className="nav-link" onClick={handleClick} aria-hidden="true">
+            <Link
+              to="/map"
+              className="nav-link"
+              onClick={() => {
+                setClick(false);
+              }}
+            >
               Carte
-            </p>
+            </Link>
           </li>
           <li className="nav-item">
-            <p className="nav-link" onClick={handleClick} aria-hidden="true">
+            <Link
+              to="/memory"
+              className="nav-link"
+              onClick={() => {
+                setClick(false);
+              }}
+            >
               Memory
-            </p>
+            </Link>
           </li>
         </ul>
       </div>

@@ -1,11 +1,15 @@
 import EarthCanvas from "../components/Earth";
+import Navbar from "../components/Navbar";
 import "../components/styles/SpaceMap.scss";
 
 function SpaceMap() {
   return (
-    <div className="space-ctn">
-      <EarthCanvas />
-    </div>
+    <>
+      <Navbar />
+      <div className="space-ctn">
+        <EarthCanvas />
+      </div>
+    </>
   );
 }
 

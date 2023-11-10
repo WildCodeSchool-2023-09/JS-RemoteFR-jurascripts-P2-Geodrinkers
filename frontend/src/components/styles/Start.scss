@@ -46,6 +46,11 @@ $primary-color: linear-gradient(45deg, #fce419, #f39914);
       text-decoration-thickness: 2px;
       background: $primary-color;
     }
+    .btn-link {
+      background: $primary-color;
+      background-clip: text;
+      color: transparent;
+    }
   }
   a {
     text-decoration: none;
