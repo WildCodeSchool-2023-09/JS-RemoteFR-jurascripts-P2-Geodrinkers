@@ -1,4 +1,4 @@
-$primary-color: linear-gradient(45deg, rgb(250, 227, 23), #f39914);
+@import "variables";
 
 .navbar {
   background: linear-gradient(90deg, rgb(6, 6, 6) 0%, rgb(26, 23, 23) 100%);

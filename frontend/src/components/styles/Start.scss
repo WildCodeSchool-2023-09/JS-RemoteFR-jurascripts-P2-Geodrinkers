@@ -1,4 +1,4 @@
-$primary-color: linear-gradient(45deg, #fce419, #f39914);
+@import "variables";
 
 .start-ctn {
   display: flex;
@@ -32,8 +32,7 @@ $primary-color: linear-gradient(45deg, #fce419, #f39914);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+
     font-weight: bold;
     cursor: pointer;
     font-size: 1rem;
@@ -50,6 +49,14 @@ $primary-color: linear-gradient(45deg, #fce419, #f39914);
       background: $primary-color;
       background-clip: text;
       color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .btn-link:hover {
+      color: #fff;
+      -webkit-text-fill-color: #fff;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
     }
   }
   a {
