@@ -14,7 +14,7 @@ export default function SingleCard({ card, handleChoice, flipped, disabled }) {
         <img className="front" src={card.src} alt="card front" />
         <img
           className="back"
-          src="./src/assets/img/cover.png"
+          src="./img/cover.png"
           onClick={handleClick}
           aria-hidden="true"
           alt="card back"
