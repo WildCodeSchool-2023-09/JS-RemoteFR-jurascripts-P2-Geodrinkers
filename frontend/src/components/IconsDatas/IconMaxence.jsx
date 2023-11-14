@@ -1,7 +1,9 @@
-import React, { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { Html } from "@react-three/drei";
 import PropTypes from "prop-types";
+import CocktailCard from "../CocktailCard";
 
 export default function IconMaxence({ position }) {
   const iconRef = useRef();
@@ -9,7 +11,7 @@ export default function IconMaxence({ position }) {
 
   useEffect(() => {
     const loader = new GLTFLoader();
-    loader.load("./src/assets/gltf/maxence.glb", (gltf) => {
+    loader.load("./public/gltf/maxence.glb", (gltf) => {
       const icon = gltf.scene;
 
       icon.rotation.y = Math.PI / 2;
@@ -18,16 +20,20 @@ export default function IconMaxence({ position }) {
         iconRef.current.add(icon);
       }
     });
-  });
+  }, []);
 
   useFrame(() => {
-    if (iconRef) {
+    if (iconRef.current) {
       iconRef.current.rotation.y += 0.01;
     }
   });
 
   const handleClick = () => {
-    setCardCocktail(!cardCocktail);
+    setCardCocktail(true);
+  };
+
+  const hideCard = () => {
+    setCardCocktail(false);
   };
 
   const handlePointerOver = () => {
@@ -46,9 +52,15 @@ export default function IconMaxence({ position }) {
         onPointerOver={handlePointerOver}
         onPointerOut={handlePointerOut}
       />
+      {cardCocktail && (
+        <Html>
+          <CocktailCard cocktailId="11690" onClose={hideCard} />
+        </Html>
+      )}
     </group>
   );
 }
+
 IconMaxence.propTypes = {
   position: PropTypes.arrayOf(PropTypes.number).isRequired,
 };

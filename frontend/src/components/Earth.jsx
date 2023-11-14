@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import * as THREE from "three";
 import { Canvas, useThree, useLoader } from "@react-three/fiber";
 import { OrbitControls, Preload, Stars } from "@react-three/drei";
+import PropTypes from "prop-types";
 import earthTexture from "../../public/img/earth.jpg";
 import IconPaul from "./IconsDatas/IconPaul";
 import IconBenoit from "./IconsDatas/IconBenoit";
@@ -112,23 +113,38 @@ function useResizePlanet() {
   return isSmallScreen;
 }
 
-function PlanetModel() {
+function PlanetModel({ onToggleAutoRotate }) {
   const isSmallScreen = useResizePlanet();
 
+  const handleMouseClick = () => {
+    onToggleAutoRotate();
+    setTimeout(() => {
+      onToggleAutoRotate();
+    }, 10000); // 10 seconds
+  };
+
   return (
-    <group scale={isSmallScreen ? [1, 1, 1] : [2, 2, 2]}>
+    <group
+      scale={isSmallScreen ? [1, 1, 1] : [2, 2, 2]}
+      onClick={handleMouseClick}
+    >
       <Earth />
     </group>
   );
 }
 
 function EarthCanvas() {
+  const [autoRotate, setAutoRotate] = useState(true);
+
+  const toggleAutoRotate = () => {
+    setAutoRotate((prevAutoRotate) => !prevAutoRotate);
+  };
   return (
     <div className="space-ctn">
       <Canvas camera={{ fov: 75, near: 0.1, far: 500, position: [0, 20, 65] }}>
-        <OrbitControls autoRotate autoRotateSpeed={0.2} />
+        <OrbitControls autoRotate={autoRotate} autoRotateSpeed={0.2} />
         <Stars />
-        <PlanetModel />
+        <PlanetModel onToggleAutoRotate={toggleAutoRotate} />
         <ambientLight intensity={1.5} />
         <Preload all />
       </Canvas>
@@ -137,3 +153,7 @@ function EarthCanvas() {
 }
 
 export default EarthCanvas;
+
+PlanetModel.propTypes = {
+  onToggleAutoRotate: PropTypes.func.isRequired,
+};
