@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import * as THREE from "three";
 import { Canvas, useThree, useLoader } from "@react-three/fiber";
 import { OrbitControls, Preload, Stars } from "@react-three/drei";
-import earthTexture from "../assets/img/earth.jpg";
+import earthTexture from "../../public/img/earth.jpg";
 import IconPaul from "./IconsDatas/IconPaul";
 import IconBenoit from "./IconsDatas/IconBenoit";
 import IconJL from "./IconsDatas/IconJL";
