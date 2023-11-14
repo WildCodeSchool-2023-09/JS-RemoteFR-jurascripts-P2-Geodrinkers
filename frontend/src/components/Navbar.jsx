@@ -13,16 +13,12 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="navbar-ctn">
         <Link to="/" className="navbar-logo">
-          <img src="./src/assets/img/logo-geo.png" alt="logo" />
+          <img src="./img/logo-geo.png" alt="logo" />
         </Link>
         <div className="menu-icon" onClick={handleClick} aria-hidden="true">
           <img
-            src={
-              click ? "./src/assets/img/close.png" : "./src/assets/img/menu.png"
-            }
-            alt={
-              click ? "./src/assets/img/close.png" : "./src/assets/img/menu.png"
-            }
+            src={click ? "./img/close.png" : "./img/menu.png"}
+            alt={click ? "./img/close.png" : "./img/menu.png"}
           />
         </div>
         <ul className={click ? "nav-menu active" : "nav-menu"}>

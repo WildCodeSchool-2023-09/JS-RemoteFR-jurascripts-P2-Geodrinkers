@@ -5,27 +5,27 @@ import Navbar from "../components/Navbar";
 
 const cardImages = [
   {
-    src: "./src/assets/img/green.jpg",
+    src: "./img/green.jpg",
     matched: false,
   },
   {
-    src: "./src/assets/img/orange.jpg",
+    src: "./img/orange.jpg",
     matched: false,
   },
   {
-    src: "./src/assets/img/spritz.jpg",
+    src: "./img/spritz.jpg",
     matched: false,
   },
   {
-    src: "./src/assets/img/white.jpg",
+    src: "./img/white.jpg",
     matched: false,
   },
   {
-    src: "./src/assets/img/yellow.jpg",
+    src: "./img/yellow.jpg",
     matched: false,
   },
   {
-    src: "./src/assets/img/blue.jpg",
+    src: "./img/blue.jpg",
     matched: false,
   },
 ];

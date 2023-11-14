@@ -2,12 +2,12 @@ const CardHomeList = [
   {
     id: 1,
     name: "MAP",
-    img: "./src/assets/img/earthCard.png",
+    img: "./img/earthCard.png",
   },
   {
     id: 2,
     name: "MEMORY",
-    img: "./src/assets/img/cocktailCard.png",
+    img: "./img/cocktailCard.png",
   },
 ];
 
