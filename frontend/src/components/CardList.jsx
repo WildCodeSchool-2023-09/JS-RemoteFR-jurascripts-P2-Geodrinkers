@@ -6,8 +6,8 @@ export default function CardList({ CardDataHome }) {
   return (
     <div className="cardContainer">
       {CardDataHome.map((url) => (
-        <Link to={url.url} className="card-map-link">
-          <Card name={url.name} img={url.img} />
+        <Link key={url.id} to={url.url} className="card-map-link">
+          <Card key={url.name} name={url.name} img={url.img} />
         </Link>
       ))}
     </div>
