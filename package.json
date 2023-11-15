@@ -38,6 +38,7 @@
   "dependencies": {
     "@react-three/drei": "^9.88.11",
     "@react-three/fiber": "^8.15.10",
+    "axios": "^1.6.1",
     "react-router-dom": "^6.18.0",
     "three": "^0.158.0"
   }
