@@ -11,7 +11,7 @@ export default function IconSuzy({ position }) {
 
   useEffect(() => {
     const loader = new GLTFLoader();
-    loader.load("./public/gltf/suzy.glb", (gltf) => {
+    loader.load("/gltf/suzy.glb", (gltf) => {
       const icon = gltf.scene;
 
       icon.rotation.y = Math.PI / 2;

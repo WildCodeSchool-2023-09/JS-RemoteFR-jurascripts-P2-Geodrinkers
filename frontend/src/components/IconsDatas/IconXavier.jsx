@@ -11,7 +11,7 @@ export default function IconXavier({ position }) {
 
   useEffect(() => {
     const loader = new GLTFLoader();
-    loader.load("./public/gltf/xav.glb", (gltf) => {
+    loader.load("/gltf/xav.glb", (gltf) => {
       const icon = gltf.scene;
 
       icon.rotation.y = Math.PI / 2;

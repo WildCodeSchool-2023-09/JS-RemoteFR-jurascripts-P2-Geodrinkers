@@ -11,7 +11,7 @@ export default function IconAlhassane({ position }) {
 
   useEffect(() => {
     const loader = new GLTFLoader();
-    loader.load("./public/gltf/alh.glb", (gltf) => {
+    loader.load("/gltf/alh.glb", (gltf) => {
       const icon = gltf.scene;
 
       icon.rotation.y = Math.PI / 2;

@@ -11,7 +11,7 @@ export default function IconMaxence({ position }) {
 
   useEffect(() => {
     const loader = new GLTFLoader();
-    loader.load("./public/gltf/maxence.glb", (gltf) => {
+    loader.load("/gltf/maxence.glb", (gltf) => {
       const icon = gltf.scene;
 
       icon.rotation.y = Math.PI / 2;

@@ -11,7 +11,7 @@ export default function IconVal({ position }) {
 
   useEffect(() => {
     const loader = new GLTFLoader();
-    loader.load("./public/gltf/val.glb", (gltf) => {
+    loader.load("/gltf/val.glb", (gltf) => {
       const icon = gltf.scene;
 
       icon.rotation.y = Math.PI / 2;

@@ -11,7 +11,7 @@ export default function IconCaly({ position }) {
 
   useEffect(() => {
     const loader = new GLTFLoader();
-    loader.load("./public/gltf/caly.glb", (gltf) => {
+    loader.load("/gltf/caly.glb", (gltf) => {
       const icon = gltf.scene;
 
       icon.rotation.y = Math.PI / 2;

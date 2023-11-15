@@ -11,7 +11,7 @@ export default function IconAlexis({ position }) {
 
   useEffect(() => {
     const loader = new GLTFLoader();
-    loader.load("./public/gltf/alexis.glb", (gltf) => {
+    loader.load("/gltf/alexis.glb", (gltf) => {
       const icon = gltf.scene;
 
       icon.rotation.y = Math.PI / 2;

@@ -11,7 +11,7 @@ export default function IconCedric({ position }) {
 
   useEffect(() => {
     const loader = new GLTFLoader();
-    loader.load("./public/gltf/cedric.glb", (gltf) => {
+    loader.load("/gltf/cedric.glb", (gltf) => {
       const icon = gltf.scene;
 
       icon.rotation.y = Math.PI / 2;

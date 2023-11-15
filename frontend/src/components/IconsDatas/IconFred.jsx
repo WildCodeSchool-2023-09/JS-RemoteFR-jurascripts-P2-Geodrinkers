@@ -11,7 +11,7 @@ export default function IconFred({ position }) {
 
   useEffect(() => {
     const loader = new GLTFLoader();
-    loader.load("./public/gltf/fred.glb", (gltf) => {
+    loader.load("/gltf/fred.glb", (gltf) => {
       const icon = gltf.scene;
 
       icon.rotation.y = Math.PI / 2;

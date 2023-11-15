@@ -11,7 +11,7 @@ export default function IconCharles({ position }) {
 
   useEffect(() => {
     const loader = new GLTFLoader();
-    loader.load("./public/gltf/charles.glb", (gltf) => {
+    loader.load("/gltf/charles.glb", (gltf) => {
       const icon = gltf.scene;
 
       icon.rotation.y = Math.PI / 2;

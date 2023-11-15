@@ -11,7 +11,7 @@ export default function IconNelson({ position }) {
 
   useEffect(() => {
     const loader = new GLTFLoader();
-    loader.load("./public/gltf/nelson.glb", (gltf) => {
+    loader.load("/gltf/nelson.glb", (gltf) => {
       const icon = gltf.scene;
 
       icon.rotation.y = Math.PI / 2;
