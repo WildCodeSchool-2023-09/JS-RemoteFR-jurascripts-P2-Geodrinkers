@@ -7,9 +7,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <div className="CardContainer">
-        <CardList CardDataHome={CardDataHome} />
-      </div>
+      <CardList CardDataHome={CardDataHome} />
     </>
   );
 }

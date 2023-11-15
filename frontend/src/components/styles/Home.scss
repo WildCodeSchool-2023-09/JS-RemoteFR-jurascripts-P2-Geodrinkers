@@ -1,6 +1,6 @@
 @import "variables";
 
-.CardContainer {
+.cardContainer {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -13,23 +13,85 @@
   background-size: cover;
   min-height: calc(100vh - 80px);
   min-width: 100vw;
-}
 
-.card-map-link {
-  text-decoration: none;
-}
+  .card-map-link {
+    text-decoration: none;
+  }
 
-.card-ctn {
-  border: 2px solid #fbe518;
-  border-radius: 35px;
-  box-shadow: 0 0 30px rgba(51, 46, 39, 0.8);
-  width: 260px;
-  height: 446px;
-  .title-ctn {
-    background: $primary-color;
-    background-clip: text;
-    color: transparent;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  .card-ctn {
+    border: 2px solid #fbe518;
+    border-radius: 35px;
+    box-shadow: 0 0 30px rgba(51, 46, 39, 0.8);
+    width: 85%;
+    height: 375px;
+
+    @media screen and (max-width: 768px) {
+      width: 85%;
+      height: 375px;
+      margin-bottom: 40px;
+      padding-top: 30px;
+    }
+
+    @media screen and (max-width: 4540px) {
+      width: 95%;
+      height: 400px;
+      margin-bottom: 20px;
+      padding-top: 20px;
+      justify-content: center;
+      align-items: center;
+      margin-left: 5px;
+    }
+
+    @media screen and (max-width: 430px) {
+      width: 95%;
+      height: 335px;
+      margin-bottom: 20px;
+      padding-top: 20px;
+      justify-content: center;
+      align-items: center;
+      margin-left: 5px;
+    }
+
+    @media screen and (max-width: 414px) {
+      width: 95%;
+      height: 335px;
+      margin-bottom: 20px;
+      padding-top: 20px;
+      justify-content: center;
+      align-items: center;
+      margin-left: 5px;
+    }
+
+    @media screen and (max-width: 390px) {
+      width: 95%;
+      height: 335px;
+      margin-bottom: 20px;
+      padding-top: 20px;
+      justify-content: center;
+      align-items: center;
+      margin-left: 5px;
+    }
+
+    @media screen and (max-width: 375px) {
+      width: 95%;
+      height: 335px;
+      margin-bottom: 20px;
+      padding-top: 20px;
+      justify-content: center;
+      align-items: center;
+      margin-left: 5px;
+    }
+
+    .title-ctn {
+      background: $primary-color;
+      background-clip: text;
+      color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    img {
+      width: 100%;
+    }
   }
 }
