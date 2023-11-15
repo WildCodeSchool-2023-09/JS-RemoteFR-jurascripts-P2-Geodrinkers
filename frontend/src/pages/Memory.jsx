@@ -1,34 +1,8 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import SingleCard from "../components/SingleCard";
 import "../components/styles/Memory.scss";
 import Navbar from "../components/Navbar";
-
-const cardImages = [
-  {
-    src: "./img/green.jpg",
-    matched: false,
-  },
-  {
-    src: "./img/orange.jpg",
-    matched: false,
-  },
-  {
-    src: "./img/spritz.jpg",
-    matched: false,
-  },
-  {
-    src: "./img/white.jpg",
-    matched: false,
-  },
-  {
-    src: "./img/yellow.jpg",
-    matched: false,
-  },
-  {
-    src: "./img/blue.jpg",
-    matched: false,
-  },
-];
 
 function Memory() {
   const [cards, setCards] = useState([]);
@@ -37,25 +11,53 @@ function Memory() {
   const [choiceTwo, setChoiceTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
 
-  const shuffleCards = () => {
-    const shuffledCards = [...cardImages, ...cardImages]
-      .sort(() => Math.random() - 0.5)
-      .map((card) => ({
-        ...card,
-        id: Math.random(),
-      }));
+  const fetchData = async () => {
+    try {
+      const responses = await Promise.all(
+        Array.from({ length: 6 }, () =>
+          axios.get("https://www.thecocktaildb.com/api/json/v1/1/random.php")
+        )
+      );
 
-    setChoiceOne(null);
-    setChoiceTwo(null);
-    setCards(shuffledCards);
-    setTurns(0);
+      const apiImages = responses.map((response) => response.data.drinks[0]);
+
+      const cardImages = apiImages.flatMap((drink) => [
+        { src: drink.strDrinkThumb, matched: false },
+        { src: drink.strDrinkThumb, matched: false },
+      ]);
+
+      const shuffledCards = cardImages
+        .sort(() => Math.random() - 0.5)
+        .map((card, index) => ({
+          ...card,
+          id: index,
+        }));
+
+      setChoiceOne(null);
+      setChoiceTwo(null);
+      setCards(shuffledCards);
+      setTurns(0);
+      setDisabled(false);
+    } catch (error) {
+      console.error("Erreur lors de la récupération des données", error);
+    }
   };
 
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   const handleChoice = (card) => {
-    if (choiceOne) {
-      return setChoiceTwo(card);
+    if (choiceOne && choiceTwo) {
+      return;
     }
-    return setChoiceOne(card);
+
+    if (!choiceOne) {
+      setChoiceOne(card);
+    } else if (choiceOne.id !== card.id) {
+      setChoiceTwo(card);
+      setDisabled(true);
+    }
   };
 
   const resetTurn = () => {
@@ -67,33 +69,25 @@ function Memory() {
 
   useEffect(() => {
     if (choiceOne && choiceTwo) {
-      setDisabled(true);
       if (choiceOne.src === choiceTwo.src) {
-        setCards((preveCards) => {
-          return preveCards.map((card) => {
-            if (card.src === choiceOne.src) {
-              return { ...card, matched: true };
-            }
-            return card;
-          });
-        });
+        setCards((prevCards) =>
+          prevCards.map((card) =>
+            card.src === choiceOne.src ? { ...card, matched: true } : card
+          )
+        );
         resetTurn();
       } else {
-        setTimeout(() => resetTurn(), 1000);
+        setTimeout(resetTurn, 1000);
       }
     }
   }, [choiceOne, choiceTwo]);
-
-  useEffect(() => {
-    shuffleCards();
-  }, []);
 
   return (
     <>
       <Navbar />
       <section className="Memory">
         <div className="Memory-ctn">
-          <button type="button" onClick={shuffleCards}>
+          <button type="button" onClick={fetchData}>
             New Game
           </button>
           <div className="card-grid">

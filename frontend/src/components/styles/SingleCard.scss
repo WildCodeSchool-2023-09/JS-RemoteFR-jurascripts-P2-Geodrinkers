@@ -2,9 +2,8 @@
 
 .card-memory {
   position: relative;
-  width: 186px;
-  height: 200px;
-  overflow: hidden;
+  width: 5rem;
+  height: 6.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,23 +15,60 @@
 
 .card-memory-img {
   display: block;
-  max-width: 90%;
-  max-height: 90%;
+  width: 100%;
+  height: 100%;
   margin: auto;
 }
+
 .card-memory .front {
   transform: rotateY(90deg);
   transition: all ease-in 0.2s;
-  position: absolute;
 }
+
 .flipped .front {
   transform: rotateY(0deg);
 }
+
 .card-memory .back {
   transition: all ease-in 0.2s;
   transition-delay: 0.2s;
 }
+
+.card-memory img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .flipped .back {
   transform: rotateY(90deg);
   transition-delay: 0s;
+}
+
+@media screen and (min-width: 451px) {
+  .card-memory {
+    width: 8.125rem;
+    height: 9.375rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+    }
+  }
+}
+
+@media screen and (min-width: 961px) {
+  .card-memory {
+    width: 11.625rem;
+    height: 12.5rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+    }
+  }
 }
