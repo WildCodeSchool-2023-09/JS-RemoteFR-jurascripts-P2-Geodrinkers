@@ -2,8 +2,8 @@
 
 .card-memory {
   position: relative;
-  width: 69px;
-  height: 117px;
+  width: 5rem;
+  height: 6.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,8 +49,8 @@
 
 @media screen and (min-width: 451px) {
   .card-memory {
-    width: 110px;
-    height: 150px;
+    width: 8.125rem;
+    height: 9.375rem;
 
     img {
       width: 100%;
@@ -62,8 +62,8 @@
 
 @media screen and (min-width: 961px) {
   .card-memory {
-    width: 186px;
-    height: 200px;
+    width: 11.625rem;
+    height: 12.5rem;
 
     img {
       width: 100%;
