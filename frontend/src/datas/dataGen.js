@@ -2,12 +2,12 @@ const iconData = [
   {
     name: "alexandre",
     coordinates: [41.116771, -7.758623],
-    cocktailID: "11009",
+    cocktailID: "17192",
   },
   {
     name: "alexis",
     coordinates: [25.7617, -80.1918],
-    cocktailID: "11010",
+    cocktailID: "13936",
   },
   {
     name: "alhassane",
@@ -22,47 +22,47 @@ const iconData = [
   {
     name: "caly",
     coordinates: [38.0918, -3.078231],
-    cocktailID: "12091",
+    cocktailID: "13020",
   },
   {
     name: "cedric",
     coordinates: [60.390928, 5.326156],
-    cocktailID: "11014",
+    cocktailID: "178349",
   },
   {
     name: "charles",
     coordinates: [45.320434, 11.048833],
-    cocktailID: "11016",
+    cocktailID: "17215",
   },
   {
     name: "christopher",
     coordinates: [52.3555, -1.1743],
-    cocktailID: "11020",
+    cocktailID: "178365",
   },
   {
     name: "didier",
     coordinates: [37.5999937, 14.0153557],
-    cocktailID: "178350",
+    cocktailID: "17195",
   },
   {
     name: "fred",
     coordinates: [50.06371, 14.399147],
-    cocktailID: "17252",
+    cocktailID: "12944",
   },
   {
     name: "jl",
     coordinates: [45.485087, -73.49067],
-    cocktailID: "15841",
+    cocktailID: "12762",
   },
   {
     name: "jordan",
     coordinates: [48.780897, 32.2847],
-    cocktailID: "16250",
+    cocktailID: "178362",
   },
   {
     name: "kevin",
     coordinates: [35.8617, 104.1954],
-    cocktailID: "11023",
+    cocktailID: "11690",
   },
   {
     name: "maxence",
@@ -77,7 +77,7 @@ const iconData = [
   {
     name: "paul",
     coordinates: [36.2048, 138.2529],
-    cocktailID: "11007",
+    cocktailID: "12726",
   },
   {
     name: "pras",
@@ -87,7 +87,7 @@ const iconData = [
   {
     name: "sandrine",
     coordinates: [46.603354, 1.888334],
-    cocktailID: "11666",
+    cocktailID: "12198",
   },
   {
     name: "suzy",

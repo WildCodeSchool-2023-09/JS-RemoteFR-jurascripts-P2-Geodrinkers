@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
 
-export default function CocktailCard({ cocktailId, onClose }) {
+export default function CocktailCard({ cocktailId, onClose, isClosed }) {
   const [cocktailData, setCocktailData] = useState(null);
 
   useEffect(() => {
@@ -42,7 +42,7 @@ export default function CocktailCard({ cocktailId, onClose }) {
   };
 
   return (
-    <div className="card-map">
+    <div className={`card-map ${isClosed ? "card-map closed" : "card-map"}`}>
       <div className="svg-ctn">
         <svg
           onClick={onClose}
@@ -77,4 +77,5 @@ export default function CocktailCard({ cocktailId, onClose }) {
 CocktailCard.propTypes = {
   cocktailId: PropTypes.string.isRequired,
   onClose: PropTypes.func.isRequired,
+  isClosed: PropTypes.bool.isRequired,
 };

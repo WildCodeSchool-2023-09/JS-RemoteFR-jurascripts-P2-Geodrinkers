@@ -91,5 +91,22 @@
     width: 100%;
     background: rgba(38, 43, 46, 0.987);
     height: calc(100vh - 80px);
+    animation: 0.3s linear 0.3s slidein;
+    transform: translateX(0%);
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+  .closed {
+    transform: translateX(-100%);
+  }
+  @keyframes slidein {
+    from {
+      left: -100%;
+      opacity: 0;
+    }
+    to {
+      left: 0;
+      opacity: 1;
+    }
   }
 }

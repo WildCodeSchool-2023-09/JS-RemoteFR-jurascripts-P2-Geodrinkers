@@ -40,7 +40,7 @@ export default function EarthCanvas() {
 
   return (
     <div className="space-ctn">
-      <Canvas camera={{ fov: 45, near: 0.1, far: 500, position: [0, 20, 65] }}>
+      <Canvas camera={{ fov: 40, near: 0.1, far: 500, position: [0, 20, 65] }}>
         <Stars />
         <Earth />
         {iconData.map(({ name, coordinates }) => (
