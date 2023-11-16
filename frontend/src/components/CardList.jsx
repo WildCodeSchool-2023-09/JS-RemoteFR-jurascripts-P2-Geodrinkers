@@ -3,17 +3,14 @@ import { Link } from "react-router-dom";
 import Card from "./Card";
 
 export default function CardList({ CardDataHome }) {
-  const firstCard = CardDataHome[0];
-  const secondCard = CardDataHome[1];
   return (
-    <>
-      <Link to="/map" className="card-map-link">
-        <Card name={firstCard.name} img={firstCard.img} />
-      </Link>
-      <Link to="/memory" className="card-map-link">
-        <Card name={secondCard.name} img={secondCard.img} />
-      </Link>
-    </>
+    <div className="cardContainer">
+      {CardDataHome.map((url) => (
+        <Link key={url.id} to={url.url} className="card-map-link">
+          <Card key={url.name} name={url.name} img={url.img} />
+        </Link>
+      ))}
+    </div>
   );
 }
 
