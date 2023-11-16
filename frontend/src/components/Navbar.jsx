@@ -55,17 +55,6 @@ export default function Navbar() {
               Memory
             </Link>
           </li>
-          <li className="nav-item">
-            <Link
-              to="/cocktail"
-              className="nav-link"
-              onClick={() => {
-                setClick(false);
-              }}
-            >
-              Cocktail
-            </Link>
-          </li>
         </ul>
       </div>
     </nav>
