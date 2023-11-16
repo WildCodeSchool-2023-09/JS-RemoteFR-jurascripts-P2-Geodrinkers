@@ -1,0 +1,12 @@
+@import "variables.scss";
+.Error-ctn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #242222;
+  text-decoration: none;
+  color: #fce419;
+  width: 100vw;
+  height: 100vh;
+  font-size: 2rem;
+}

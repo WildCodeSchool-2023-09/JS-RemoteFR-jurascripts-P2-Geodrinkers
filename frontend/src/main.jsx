@@ -7,6 +7,7 @@ import Start from "./pages/Start";
 import Home from "./pages/Home";
 import SpaceMap from "./pages/SpaceMap";
 import Memory from "./pages/Memory";
+import ErrorPage from "./pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/memory",
         element: <Memory />,
+      },
+      {
+        path: "/cocktail",
+        element: <ErrorPage />,
       },
     ],
   },
