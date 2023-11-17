@@ -7,10 +7,12 @@ import Start from "./pages/Start";
 import Home from "./pages/Home";
 import SpaceMap from "./pages/SpaceMap";
 import Memory from "./pages/Memory";
+import ErrorPage from "./pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
     element: <App />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
